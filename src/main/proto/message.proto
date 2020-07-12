@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.marcos.message";
+option java_outer_classname = "MessageProto";
+option objc_class_prefix = "MP";
+
+package message;
+
+// The request message containing the user's name.
+message MessageRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message MessageResponse {
+  string message = 1;
+}
+
+// The greeting service definition.
+service MessageService {
+  rpc SayHello (MessageRequest) returns (MessageResponse) {}
+}
